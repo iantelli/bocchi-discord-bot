@@ -1,7 +1,7 @@
 import { Event } from "../types"
-import ready from "./ready"
 import interactionCreate from "./interactionCreate"
+import ready from "./ready"
 
-const events: Event<any>[] = [ready, interactionCreate]
+const events: Event<any>[] = [ready, ...interactionCreate]
 
 export default events
