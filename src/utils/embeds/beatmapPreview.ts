@@ -1,6 +1,7 @@
 import { EmbedBuilder } from "@discordjs/builders"
 import { InteractionReplyOptions } from "discord.js"
 import { BeatmapResponseApi, BeatmapResponseApi as type } from "../../api"
+import { secondsToMinutes } from "../../utils"
 
 export const beatmapPreviewEmbed = (data: BeatmapResponseApi): InteractionReplyOptions => {
     const embed = new EmbedBuilder()
@@ -10,7 +11,7 @@ export const beatmapPreviewEmbed = (data: BeatmapResponseApi): InteractionReplyO
         .setURL(`https://osu.ppy.sh/beatmapsets/${data.ParentSetID}#osu/${data.BeatmapID}`)
         .addFields(
             { name: `⭐️`, value: `${data.DifficultyRating}`, inline: true },
-            { name: `⏱️`, value: `${data.TotalLength}`, inline: true },
+            { name: `⏱️`, value: `${secondsToMinutes(data.TotalLength)}`, inline: true },
             { name: `BPM`, value: `${data.BPM}`, inline: true },
             { name: "\u200B", value: "\u200B" },
             { name: `CS`, value: `${data.CS}`, inline: true },
