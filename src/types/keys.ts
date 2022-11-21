@@ -1,5 +1,5 @@
 export interface Keys {
-  clientToken: string
-  testGuild: string
-  apiLink: string
+    clientToken: string
+    testGuild: string
+    apiLink: string
 }
