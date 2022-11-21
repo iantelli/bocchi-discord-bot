@@ -1,25 +1,30 @@
-import { EmbedBuilder } from "@discordjs/builders"
-import { InteractionReplyOptions } from "discord.js"
+import { InteractionReplyOptions, ActionRowBuilder, ButtonBuilder, ButtonStyle, EmbedBuilder } from "discord.js"
 import { BeatmapResponseApi, BeatmapResponseApi as type } from "../../api"
 import { secondsToMinutes } from "../../utils"
+import keys from "../../keys"
 
 export const beatmapPreviewEmbed = (data: BeatmapResponseApi): InteractionReplyOptions => {
     const embed = new EmbedBuilder()
         .setColor(0xff8c00)
         .setImage(`https://assets.ppy.sh/beatmaps/${data.ParentSetID}/covers/cover.jpg`)
-        .setTitle(data.DiffName)
+        .setTitle(`Difficulty Name: ${data.DiffName}`)
         .setURL(`https://osu.ppy.sh/beatmapsets/${data.ParentSetID}#osu/${data.BeatmapID}`)
-        .addFields(
-            { name: `⭐️`, value: `${data.DifficultyRating}`, inline: true },
-            { name: `⏱️`, value: `${secondsToMinutes(data.TotalLength)}`, inline: true },
-            { name: `BPM`, value: `${data.BPM}`, inline: true },
-            { name: "\u200B", value: "\u200B" },
-            { name: `CS`, value: `${data.CS}`, inline: true },
-            { name: `AR`, value: `${data.AR}`, inline: true },
-            { name: `HP`, value: `${data.HP}`, inline: true },
-            { name: `OD`, value: `${data.OD}`, inline: true }
-        )
+        .addFields({
+            name: `Beatmap Info`,
+            value: `${data.DifficultyRating}⭐️ - ${data.BPM}bpm - ${secondsToMinutes(data.TotalLength)}⏱️ - x/${
+                data.MaxCombo
+            }combo \n **CS**:${data.CS} **AR**:${data.AR} **HP**:${data.HP} **OD**:${data.OD}`,
+        })
+        .setFooter({ text: `Bocchi Bot - Powered by Kitsu` })
+
+    const row = new ActionRowBuilder<ButtonBuilder>().addComponents(
+        new ButtonBuilder()
+            .setURL(`${keys.apiLink}/d/${data.ParentSetID}`)
+            .setLabel("Download Map")
+            .setStyle(ButtonStyle.Link)
+    )
     return {
         embeds: [embed],
+        components: [row],
     }
 }
