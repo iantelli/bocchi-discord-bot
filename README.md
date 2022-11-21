@@ -1,17 +1,21 @@
-![Bocchi shaking her head](https://files.catbox.moe/v275w6.gif)
+<p align="center">
+    <img alt="[Bocchi shaking her head]" src="https://files.catbox.moe/v275w6.gif">
+</p>
 
 # Bocchi Bot
 
-Discord bot for osu! tournament training practice
+Discord bot for osu! tournament training practice.
 
 ### Features
 
+-   [ ] Display beatmap set info and all difficulties
 -   [ ] Reccomend a beatmap based on specified query (mmr, sr, bpm, skillset)
 -   [ ] Reccomend a tourney pool based on specified query
 -   [ ] Generate a tourney pool
--   [ ] More features on the way!
 
-### Completed Column ✓
+_More features on the way!_
+
+### Completed ✓
 
 -   [x] Display beatmap info and download
 -   [x] Bocchi profile pic
