@@ -9,7 +9,7 @@ export default event("ready", ({ log }, client) => {
                     // number of servers this bot is in with comma separators
                     activities: [
                         {
-                            name: `Osu!`,
+                            name: `osu!`,
                             type: 0,
                         },
                     ],
