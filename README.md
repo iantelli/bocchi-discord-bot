@@ -1,2 +1,3 @@
-# bot-ts
- Discord multi-purpose bot built with Typescript
+# Bocchi
+
+Discord bot for osu! tournament training practice
