@@ -1,6 +1,6 @@
-import { BeatmapResponseApi } from "./apiResponseType"
-import keys from "../keys"
 import axios from "axios"
+import keys from "../../keys"
+import { BeatmapResponseApi } from "./apiResponseType"
 
 export const getBeatmapInfo = async (beatmapId: string): Promise<BeatmapResponseApi> => {
     try {

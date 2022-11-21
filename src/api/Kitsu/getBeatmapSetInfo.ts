@@ -1,5 +1,5 @@
 import axios from "axios"
-import keys from "../keys"
+import keys from "../../keys"
 import { BeatmapSetResponseApi } from "./apiResponseType"
 
 export const getBeatmapSetInfo = async (beatmapSetId: string): Promise<BeatmapSetResponseApi> => {
