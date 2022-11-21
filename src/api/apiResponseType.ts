@@ -16,3 +16,22 @@ export interface BeatmapResponseApi {
     MaxCombo: number
     DifficultyRating: number
 }
+
+export interface BeatmapSetResponseApi {
+    SetID: number
+    Title: string
+    Artist: string
+    Creator: string
+    Source: string
+    Tags: string
+    RankedStatus: number
+    Genre: number
+    Language: number
+    Favourites: number
+    HasVideo: boolean
+    DownloadUnavailable: boolean
+    ApprovedDate: string
+    LastUpdate: string
+    LastChecked: string
+    ChildrenBeatmaps: [BeatmapResponseApi]
+}
