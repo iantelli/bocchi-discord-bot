@@ -33,5 +33,5 @@ export interface BeatmapSetResponseApi {
     ApprovedDate: string
     LastUpdate: string
     LastChecked: string
-    ChildrenBeatmaps: [BeatmapResponseApi]
+    ChildrenBeatmaps: BeatmapResponseApi[]
 }
