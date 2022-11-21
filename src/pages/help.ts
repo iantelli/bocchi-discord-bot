@@ -1,7 +1,7 @@
 import {
   ActionRowBuilder,
   ButtonBuilder,
-  SelectMenuBuilder,
+  SelectMenuBuilder
 } from "@discordjs/builders"
 import { debug } from "console"
 import {
@@ -9,7 +9,7 @@ import {
   ButtonStyle,
   EmbedBuilder,
   InteractionReplyOptions,
-  SelectMenuOptionBuilder,
+  SelectMenuOptionBuilder
 } from "discord.js"
 import CategoryRoot from "../commands"
 import { chunk, createId, readId } from "../utils"
@@ -103,9 +103,8 @@ export function getCategoryPage(
   else if (action === A.back) offset--
 
   const emoji = category.emoji ? `${category.emoji} ` : ""
-  const defaultDescription = `Browse through ${
-    category.commands.flat().length
-  } commands in ${emoji}${category.name}`
+  const defaultDescription = `Browse through ${category.commands.flat().length
+    } commands in ${emoji}${category.name}`
 
   const embed = new EmbedBuilder()
     .setTitle(`${emoji}${category.name} Commands`)

@@ -1,7 +1,7 @@
 import { Client, GatewayIntentBits } from "discord.js"
-import { registerEvents } from "../utils"
-import keys from "../keys"
 import events from "../events"
+import keys from "../keys"
+import { registerEvents } from "../utils"
 
 const client = new Client({
   intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMembers],
