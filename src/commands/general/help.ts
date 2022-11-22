@@ -7,6 +7,5 @@ const meta = new SlashCommandBuilder()
     .setDescription("Shows a list of all commands or info about a specific command.")
 
 export default command(meta, ({ interaction }) => {
-    const message = interaction.options.getString("message")
     interaction.reply(getCategoryRoot(true))
 })

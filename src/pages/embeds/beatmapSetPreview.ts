@@ -10,7 +10,7 @@ export const beatmapSetPreviewEmbed = (data: BeatmapSetResponseApi): Interaction
         .setTitle(`${data.Artist} - ${data.Title}`)
         .setDescription(`Mapped By: ${data.Creator}`)
         .setURL(`https://osu.ppy.sh/beatmapsets/${data.SetID}#osu/`)
-        .setFields({
+        .addFields({
             name: `Difficulties:`,
             value: `${data.ChildrenBeatmaps.map((beatmap): string => (`**${beatmap.DiffName}** \n ${beatmap.DifficultyRating}⭐️ - ${beatmap.BPM}bpm - ${secondsToMinutes(beatmap.TotalLength)}⏱️ - x/${beatmap.MaxCombo
                 }combo \n CS ${beatmap.CS} | AR ${beatmap.AR} | HP ${beatmap.HP} | OD ${beatmap.OD} \n`)).join("")

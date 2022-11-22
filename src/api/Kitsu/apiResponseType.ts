@@ -35,3 +35,5 @@ export interface BeatmapSetResponseApi {
     LastChecked: string
     ChildrenBeatmaps: BeatmapResponseApi[]
 }
+
+export type SearchBeatmapSetResponseApi = BeatmapSetResponseApi[]
