@@ -4,6 +4,7 @@
 
 # Bocchi Bot
 
+<img src="https://i.ibb.co/cbSjkZp/bocchi-Bot.png" alt="bocchi-Bot" border="0"> :wave: <br>
 Discord bot for osu! tournament training practice.
 
 ### Features
