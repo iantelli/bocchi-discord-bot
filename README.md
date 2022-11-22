@@ -9,6 +9,7 @@ Discord bot for osu! tournament training practice.
 
 ### Features
 
+-   [ ] Search for a beatmap by name
 -   [ ] Reccomend a beatmap based on specified query (mmr, sr, bpm, skillset)
 -   [ ] Reccomend a tournament pool based on specified query
 -   [ ] Generate a tournament pool
