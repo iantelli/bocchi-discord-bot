@@ -1,5 +1,5 @@
 import { ActionRowBuilder, ButtonBuilder, ButtonStyle, EmbedBuilder, InteractionReplyOptions } from "discord.js"
-import { BeatmapResponseApi, BeatmapResponseApi as type } from "../../api"
+import { BeatmapResponseApi } from "../../api"
 import keys from "../../keys"
 import { secondsToMinutes } from "../../utils"
 
@@ -12,7 +12,7 @@ export const beatmapPreviewEmbed = (data: BeatmapResponseApi): InteractionReplyO
         .addFields({
             name: `Beatmap Info`,
             value: `${data.DifficultyRating}⭐️ - ${data.BPM}bpm - ${secondsToMinutes(data.TotalLength)}⏱️ - x/${data.MaxCombo
-                }combo \n **CS**:${data.CS} **AR**:${data.AR} **HP**:${data.HP} **OD**:${data.OD}`,
+                }combo \n CS ${data.CS} | AR ${data.AR} | HP ${data.HP} | OD ${data.OD}`,
         })
         .setFooter({ text: `Bocchi Bot - Powered by Kitsu API` })
 

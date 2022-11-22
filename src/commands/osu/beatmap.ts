@@ -1,7 +1,7 @@
 import { SlashCommandBuilder } from "discord.js"
-import { command } from "../../utils"
 import { getBeatmapInfo } from "../../api"
-import { errorEmbed, beatmapPreviewEmbed } from "../../utils/embeds"
+import { beatmapPreviewEmbed, errorEmbed } from "../../pages/embeds"
+import { command } from "../../utils"
 
 const meta = new SlashCommandBuilder()
     .setName("beatmap")

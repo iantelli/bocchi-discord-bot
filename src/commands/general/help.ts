@@ -1,5 +1,5 @@
 import { SlashCommandBuilder } from "discord.js"
-import { getCategoryRoot } from "../../pages/help"
+import { getCategoryRoot } from "../../pages/"
 import { command } from "../../utils"
 
 const meta = new SlashCommandBuilder()
