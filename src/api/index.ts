@@ -1,3 +1,2 @@
-export * from "./Kitsu";
-// export * from "./Pools";
-
+export * from "./Kitsu"
+export * from "./Pools"
