@@ -12,11 +12,17 @@ export const beatmapSetPreviewEmbed = (data: BeatmapSetResponseApi): Interaction
         .setURL(`https://osu.ppy.sh/beatmapsets/${data.SetID}#osu/`)
         .addFields({
             name: `Difficulties:`,
-            value: `${data.ChildrenBeatmaps.map((beatmap): string => (`**${beatmap.DiffName}** \n ${beatmap.DifficultyRating}⭐️ - ${beatmap.BPM}bpm - ${secondsToMinutes(beatmap.TotalLength)}⏱️ - x/${beatmap.MaxCombo
-                }combo \n CS ${beatmap.CS} | AR ${beatmap.AR} | HP ${beatmap.HP} | OD ${beatmap.OD} \n`)).join("")
-                }`
+            value: `${data.ChildrenBeatmaps.map(
+                (beatmap): string =>
+                    `**${beatmap.DiffName}** \n ${beatmap.DifficultyRating}⭐️ - ${beatmap.BPM}bpm - ${secondsToMinutes(
+                        beatmap.TotalLength
+                    )}⏱️ - x/${beatmap.MaxCombo}combo \n CS ${beatmap.CS} | AR ${beatmap.AR} | HP ${beatmap.HP} | OD ${
+                        beatmap.OD
+                    } \n`
+            ).join("")}`,
         })
         .setFooter({ text: `Bocchi Bot - Powered by Kitsu API` })
+        .setTimestamp(new Date())
 
     const row = new ActionRowBuilder<ButtonBuilder>().addComponents(
         new ButtonBuilder()

@@ -1,2 +1,2 @@
-export * from "./embeds";
-export * from "./help";
+export * from "./embeds"
+export * from "./help"

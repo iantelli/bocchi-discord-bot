@@ -1,6 +1,6 @@
-import { SlashCommandBuilder } from "discord.js"
+import { SlashCommandBuilder, TextChannel } from "discord.js"
 import { searchBeatmapSet } from "../../api"
-import { errorEmbed } from "../../pages/embeds"
+import { errorEmbed, beatmapSetPreviewEmbed } from "../../pages"
 import { command } from "../../utils"
 
 const meta = new SlashCommandBuilder()
@@ -17,11 +17,10 @@ export default command(meta, async ({ interaction }) => {
         if (ranked) {
             // TODO: need to make component to display data
             const data = await searchBeatmapSet(query!, ranked)
-            console.log(data)
+            return interaction.reply(beatmapSetPreviewEmbed(data[0]))
         }
         const data = await searchBeatmapSet(query!)
-        console.log(data)
-        return interaction.reply({ content: "test" })
+        return interaction.reply(beatmapSetPreviewEmbed(data[0]))
     } catch (err) {
         return interaction.reply(errorEmbed("Beatmap ID is invalid"))
     }

@@ -2,11 +2,14 @@ import axios from "axios"
 import keys from "../../keys"
 import { SearchBeatmapSetResponseApi } from "./apiResponseType"
 
-export const searchBeatmapSet = async (searchQuery: string, rankedStatus?: boolean): Promise<SearchBeatmapSetResponseApi> => {
+export const searchBeatmapSet = async (
+    searchQuery: string,
+    rankedStatus?: boolean
+): Promise<SearchBeatmapSetResponseApi> => {
     const params = {
         query: searchQuery,
         mode: 0,
-        amount: 50
+        amount: 10,
     }
 
     try {
