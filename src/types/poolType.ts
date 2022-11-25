@@ -1,3 +1,12 @@
+export enum Mods {
+    NM = 'NOMOD',
+    HD = 'HIDDEN',
+    HR = 'HARDROCK',
+    DT = 'DOUBLETIME',
+    FM = "FREEMOD",
+    TB = 'TIEBREAKER',
+}
+
 export interface TourneyMap {
     mapId: number
     mod: string
@@ -11,7 +20,7 @@ export interface TourneyMap {
     downloadAvailable: boolean
     mmr: number
     skillset: string
-    sheetId: string
+    sheetId: string // example: NM1, HD2
 }
 
 export interface TourneyPool {
