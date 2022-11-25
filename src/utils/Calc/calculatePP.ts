@@ -1,6 +1,6 @@
 import { MapInfo, ModUtil } from "@rian8337/osu-base";
 import {
-    MapStars, OsuDifficultyCalculator, OsuPerformanceCalculator
+    MapStars, OsuPerformanceCalculator
 } from "@rian8337/osu-difficulty-calculator";
 
 export const calculatePP = async (mapId: number, mods: string) => {

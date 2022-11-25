@@ -1,4 +1,4 @@
-import { SlashCommandBuilder, TextChannel } from "discord.js"
+import { SlashCommandBuilder } from "discord.js"
 import { searchBeatmapSet } from "../../api"
 import { beatmapSetEmbed, errorEmbed } from "../../pages"
 import { command } from "../../utils"
