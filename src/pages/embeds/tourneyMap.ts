@@ -6,7 +6,7 @@ import { secondsToMinutes } from "../../utils"
 export const tourneyMapEmbed = (data: TourneyMap): InteractionReplyOptions => {
     const file = new AttachmentBuilder(`./src/public/${data.sheetId}.png`)
     const embed = new EmbedBuilder()
-        .setColor(0xff8c00)
+        .setColor(0xFF8EE6)
         .setImage(`https://assets.ppy.sh/beatmaps/${data.mapSetId}/covers/cover.jpg` ?? "https://assets.ppy.sh/beatmaps/355322/covers/cover.jpg")
         .setTitle(`${data.mapName} - ${data.difficultyName}`)
         .setDescription(`ID: ${data.mapSetId}`)

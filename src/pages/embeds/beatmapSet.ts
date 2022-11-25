@@ -5,7 +5,7 @@ import { secondsToMinutes } from "../../utils"
 
 export const beatmapSetEmbed = (data: BeatmapSetResponseApi): InteractionReplyOptions => {
     const embed = new EmbedBuilder()
-        .setColor(0xff8c00)
+        .setColor(0xFF8EE6)
         .setImage(`https://assets.ppy.sh/beatmaps/${data.SetID}/covers/cover.jpg` ?? "https://assets.ppy.sh/beatmaps/355322/covers/cover.jpg")
         .setTitle(`${data.Artist} - ${data.Title}`)
         .setDescription(`Mapped By: ${data.Creator}`)
