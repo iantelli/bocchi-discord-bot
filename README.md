@@ -9,9 +9,7 @@ Discord bot for osu! tournament training practice.
 
 ### Features
 
--   [x] Search for a beatmap by name
-    -   [ ] Display search results in pages of 5 mapsets/page
--   [ ] Reccomend a beatmap based on specified query (mmr, sr, bpm, skillset)
+-   [ ] Host the discord bot
 -   [ ] Reccomend a tournament pool based on specified query
 -   [ ] Generate a tournament pool
 
@@ -19,6 +17,9 @@ _More features on the way!_
 
 ### Completed ✓
 
--   [x] Display beatmap set info and all difficulties
--   [x] Display beatmap info and download
+-   [x] Reccomend a beatmap based on specified query (mmr, skillset)
+-   [x] Search for a beatmap by name
+    -   [x] Display beatmap set info and all difficulties
+    -   [x] Display single beatmap info
+        -   [x] API to Download beatmap (even graveyard maps) [KITSU](https://kitsu.moe)
 -   [x] Bocchi profile pic
