@@ -9,6 +9,7 @@ Discord bot for osu! tournament training practice.
 
 ### Todo
 
+-   [ ] Transfer fake db to real db
 -   [ ] Host the discord bot
 -   [ ] Calculate beatmap stats(sr, bpm, etc.) after mod application
 -   [ ] Better error handling
