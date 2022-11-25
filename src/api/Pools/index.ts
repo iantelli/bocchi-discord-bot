@@ -1,2 +1,2 @@
-export * from "./random"
-// export * from "./reccomend"
+export * from "./reccomend";
+
