@@ -1,6 +1,6 @@
 import { SlashCommandBuilder } from "discord.js"
 import { getBeatmapInfo } from "../../api"
-import { beatmapPreviewEmbed, errorEmbed } from "../../pages/embeds"
+import { beatmapEmbed, errorEmbed } from "../../pages/embeds"
 import { command } from "../../utils"
 
 const meta = new SlashCommandBuilder()
@@ -14,7 +14,7 @@ export default command(meta, async ({ interaction }) => {
     try {
         if (beatmapIdInput) {
             const data = await getBeatmapInfo(beatmapIdInput)
-            return interaction.reply(beatmapPreviewEmbed(data))
+            return interaction.reply(beatmapEmbed(data))
         }
     } catch (err) {
         return interaction.reply(errorEmbed("Beatmap ID is invalid"))

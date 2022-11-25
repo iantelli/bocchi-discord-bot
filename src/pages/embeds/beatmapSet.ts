@@ -3,10 +3,10 @@ import { BeatmapSetResponseApi } from "../../api"
 import keys from "../../keys"
 import { secondsToMinutes } from "../../utils"
 
-export const beatmapSetPreviewEmbed = (data: BeatmapSetResponseApi): InteractionReplyOptions => {
+export const beatmapSetEmbed = (data: BeatmapSetResponseApi): InteractionReplyOptions => {
     const embed = new EmbedBuilder()
         .setColor(0xff8c00)
-        .setImage(`https://assets.ppy.sh/beatmaps/${data.SetID}/covers/cover.jpg`)
+        .setImage(`https://assets.ppy.sh/beatmaps/${data.SetID}/covers/cover.jpg` || "https://assets.ppy.sh/beatmaps/355322/covers/cover.jpg")
         .setTitle(`${data.Artist} - ${data.Title}`)
         .setDescription(`Mapped By: ${data.Creator}`)
         .setURL(`https://osu.ppy.sh/beatmapsets/${data.SetID}#osu/`)
@@ -16,8 +16,7 @@ export const beatmapSetPreviewEmbed = (data: BeatmapSetResponseApi): Interaction
                 (beatmap): string =>
                     `**${beatmap.DiffName}** \n ${beatmap.DifficultyRating}⭐️ - ${beatmap.BPM}bpm - ${secondsToMinutes(
                         beatmap.TotalLength
-                    )}⏱️ - x/${beatmap.MaxCombo}combo \n CS ${beatmap.CS} | AR ${beatmap.AR} | HP ${beatmap.HP} | OD ${
-                        beatmap.OD
+                    )}⏱️ - x/${beatmap.MaxCombo}combo \n CS ${beatmap.CS} | AR ${beatmap.AR} | HP ${beatmap.HP} | OD ${beatmap.OD
                     } \n`
             ).join("")}`,
         })
