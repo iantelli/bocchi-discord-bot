@@ -12,7 +12,7 @@ export const beatmapEmbed = (data: BeatmapResponseApi): InteractionReplyOptions 
         .addFields({
             name: `Beatmap Info`,
             value: `${data.DifficultyRating}⭐️ - ${data.BPM}bpm - ${secondsToMinutes(data.TotalLength)}⏱️ - x/${data.MaxCombo
-                }combo \n CS ${data.CS} | AR ${data.AR} | HP ${data.HP} | OD ${data.OD}`,
+                } combo \n CS ${data.CS} | AR ${data.AR} | HP ${data.HP} | OD ${data.OD}`,
         })
         .setFooter({ text: `Bocchi Bot - Powered by Kitsu API` })
         .setTimestamp(new Date())

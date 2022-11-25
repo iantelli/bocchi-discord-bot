@@ -1,11 +1,12 @@
 import { SlashCommandBuilder } from "discord.js"
-import { getRecommendedBeatmap } from "../../api"
+import { getBeatmapInfo, getRecommendedBeatmap } from "../../api"
+import { calculatePP } from "../../api/calc"
 import { errorEmbed, tourneyMapEmbed } from "../../pages/embeds"
 import { Mods } from "../../types"
 import { command } from "../../utils"
 
 const meta = new SlashCommandBuilder().setName("r").setDescription("Recommend a beatmap from a random tourney pool")
-    .addNumberOption((option) => option.setName("mmr").setDescription("The average mmr of the beatmap").setRequired(true).setMinValue(1).setMaxValue(3300))
+    .addNumberOption((option) => option.setName("mmr").setDescription("The average mmr of the beatmap").setRequired(true).setMinValue(100).setMaxValue(3300))
     .addStringOption((option) => option.setName("mod").setDescription("The mod of the beatmap").setRequired(true).addChoices({
         name: "No Mod",
         value: Mods.NM,
@@ -30,10 +31,12 @@ export default command(meta, async ({ interaction }) => {
     const mmr = interaction.options.getNumber("mmr")
     const mod = interaction.options.getString("mod")
     const beatmap = getRecommendedBeatmap(mmr!, mod!)
+    const beatmapResponse = await getBeatmapInfo(beatmap.mapId.toString())
 
     try {
         if (beatmap.mapName.length > 0) {
-            return interaction.reply(tourneyMapEmbed(beatmap))
+            const rating = await calculatePP(beatmap.mapId, beatmap.sheetId.slice(0, -1))
+            return interaction.reply(tourneyMapEmbed(beatmapResponse, rating!.pp.total, beatmap.sheetId, beatmap.mapName, rating!.map.stats, rating!.map.sr))
         }
     } catch (err) {
         return interaction.reply(errorEmbed("Beatmap not found"))

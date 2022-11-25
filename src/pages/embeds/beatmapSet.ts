@@ -16,7 +16,7 @@ export const beatmapSetEmbed = (data: BeatmapSetResponseApi): InteractionReplyOp
                 (beatmap): string =>
                     `**${beatmap.DiffName}** \n ${beatmap.DifficultyRating}⭐️ - ${beatmap.BPM}bpm - ${secondsToMinutes(
                         beatmap.TotalLength
-                    )}⏱️ - x/${beatmap.MaxCombo}combo \n CS ${beatmap.CS} | AR ${beatmap.AR} | HP ${beatmap.HP} | OD ${beatmap.OD
+                    )}⏱️ - x/${beatmap.MaxCombo} combo \n CS ${beatmap.CS} | AR ${beatmap.AR} | HP ${beatmap.HP} | OD ${beatmap.OD
                     } \n`
             ).join("")}`,
         })
