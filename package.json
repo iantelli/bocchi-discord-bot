@@ -20,6 +20,8 @@
         "typescript": "^4.9.3"
     },
     "dependencies": {
+        "@rian8337/osu-base": "^2.2.0",
+        "@rian8337/osu-difficulty-calculator": "^2.2.0",
         "axios": "^1.1.3",
         "cross-env": "^7.0.3",
         "discord.js": "^14.6.0",
