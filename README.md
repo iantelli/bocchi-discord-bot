@@ -7,9 +7,10 @@
 <img src="https://i.ibb.co/cbSjkZp/bocchi-Bot.png" alt="bocchi-Bot" border="0"> :wave: <br>
 Discord bot for osu! tournament training practice.
 
-### Features
+### Todo
 
 -   [ ] Host the discord bot
+-   [ ] Better error handling
 -   [ ] Reccomend a tournament pool based on specified query
 -   [ ] Generate a tournament pool
 
