@@ -9,7 +9,7 @@ export const searchBeatmapSet = async (
     const params = {
         query: searchQuery,
         mode: 0,
-        amount: 10,
+        amount: 10
     }
 
     try {

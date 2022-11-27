@@ -19,27 +19,27 @@ const meta = new SlashCommandBuilder()
         option.setName("mod").setDescription("The mod of the beatmap").setRequired(true).addChoices(
             {
                 name: "No Mod",
-                value: Mods.NM,
+                value: Mods.NM
             },
             {
                 name: "Hidden",
-                value: Mods.HD,
+                value: Mods.HD
             },
             {
                 name: "Hard Rock",
-                value: Mods.HR,
+                value: Mods.HR
             },
             {
                 name: "Double Time",
-                value: Mods.DT,
+                value: Mods.DT
             },
             {
                 name: "Free Mod",
-                value: Mods.FM,
+                value: Mods.FM
             },
             {
                 name: "Tie Breaker",
-                value: Mods.TB,
+                value: Mods.TB
             }
         )
     )

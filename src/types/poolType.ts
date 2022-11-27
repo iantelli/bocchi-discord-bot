@@ -1,10 +1,10 @@
 export enum Mods {
-    NM = 'NOMOD',
-    HD = 'HIDDEN',
-    HR = 'HARDROCK',
-    DT = 'DOUBLETIME',
+    NM = "NOMOD",
+    HD = "HIDDEN",
+    HR = "HARDROCK",
+    DT = "DOUBLETIME",
     FM = "FREEMOD",
-    TB = 'TIEBREAKER',
+    TB = "TIEBREAKER"
 }
 
 export interface TourneyMap {

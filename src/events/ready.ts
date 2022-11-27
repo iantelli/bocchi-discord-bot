@@ -9,10 +9,10 @@ export default event("ready", ({ log }, client) => {
                 activities: [
                     {
                         name: `osu!`,
-                        type: 0,
-                    },
+                        type: 0
+                    }
                 ],
-                status: "online",
+                status: "online"
             })
         } catch (error) {
             // And of course, make sure you catch and log any errors!

@@ -5,7 +5,7 @@ import {
     ButtonBuilder,
     ButtonStyle,
     EmbedBuilder,
-    InteractionReplyOptions,
+    InteractionReplyOptions
 } from "discord.js"
 import { BeatmapResponseApi } from "../../api"
 import keys from "../../keys"
@@ -38,7 +38,7 @@ export const tourneyMapEmbed = (
                     : secondsToMinutes(data.TotalLength)
             }⏱️ - x/${data.MaxCombo} combo \n CS ${mapStats.cs!.toFixed(1)} | AR ${mapStats.ar!.toFixed(
                 1
-            )} | OD ${mapStats.od!.toFixed(1)} | HP ${mapStats.hp!.toFixed(1)}`,
+            )} | OD ${mapStats.od!.toFixed(1)} | HP ${mapStats.hp!.toFixed(1)}`
         })
         .setFooter({ text: `Bocchi Bot - Powered by Kitsu API` })
         .setTimestamp(new Date())
@@ -52,6 +52,6 @@ export const tourneyMapEmbed = (
     return {
         embeds: [embed],
         components: [row],
-        files: [file],
+        files: [file]
     }
 }

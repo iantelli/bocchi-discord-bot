@@ -19,7 +19,7 @@ export default event("interactionCreate", async ({ log, client }, interaction) =
             interaction,
             log(...args) {
                 log(`[${command.meta.name}]`, ...args)
-            },
+            }
         })
     } catch (err) {
         log("[Command Error]", err)

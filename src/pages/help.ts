@@ -7,13 +7,13 @@ import { chunk, createId, readId } from "../utils"
 export const Namespaces = {
     root: "help_category_root",
     select: "help_category_select",
-    action: "help_category_action",
+    action: "help_category_action"
 }
 
 // Actions we will use
 export const Actions = {
     next: "+",
-    back: "-",
+    back: "-"
 }
 
 const N = Namespaces
@@ -28,7 +28,7 @@ export function getCategoryRoot(ephemeral?: boolean): InteractionReplyOptions {
                 label: name,
                 description,
                 emoji,
-                value: name,
+                value: name
             })
     )
 
@@ -48,7 +48,7 @@ export function getCategoryRoot(ephemeral?: boolean): InteractionReplyOptions {
     return {
         embeds: [embed],
         components: [component],
-        ephemeral,
+        ephemeral
     }
 }
 
@@ -61,12 +61,12 @@ export function getCategoryPage(interactionId: string): InteractionReplyOptions 
         // Pre-map all commands as embed fields
         const commands: APIEmbedField[] = c.commands.map((c) => ({
             name: c.meta.name,
-            value: c.meta.description,
+            value: c.meta.description
         }))
 
         return {
             ...c,
-            commands: chunk(commands, 10),
+            commands: chunk(commands, 10)
         }
     })
 
@@ -114,6 +114,6 @@ export function getCategoryPage(interactionId: string): InteractionReplyOptions 
 
     return {
         embeds: [embed],
-        components: [component],
+        components: [component]
     }
 }

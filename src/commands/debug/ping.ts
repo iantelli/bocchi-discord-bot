@@ -17,6 +17,6 @@ export default command(meta, ({ interaction }) => {
     const message = interaction.options.getString("message")
     interaction.reply({
         ephemeral: true,
-        content: message ?? "Pong! 🏓",
+        content: message ?? "Pong! 🏓"
     })
 })

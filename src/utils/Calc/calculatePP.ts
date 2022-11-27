@@ -1,7 +1,5 @@
-import { MapInfo, ModUtil } from "@rian8337/osu-base";
-import {
-    MapStars, OsuPerformanceCalculator
-} from "@rian8337/osu-difficulty-calculator";
+import { MapInfo, ModUtil } from "@rian8337/osu-base"
+import { MapStars, OsuPerformanceCalculator } from "@rian8337/osu-difficulty-calculator"
 
 export const calculatePP = async (mapId: number, mods: string) => {
     const beatmapInfo = await MapInfo.getInformation(mapId)
@@ -12,9 +10,9 @@ export const calculatePP = async (mapId: number, mods: string) => {
     if (beatmapInfo) {
         const appliedMods = ModUtil.pcStringToMods(mods)
         const newRating = new MapStars(beatmapInfo.beatmap, {
-            mods: appliedMods,
+            mods: appliedMods
         })
-        const osuPerformance = new OsuPerformanceCalculator(newRating.osu).calculate();
+        const osuPerformance = new OsuPerformanceCalculator(newRating.osu).calculate()
         return {
             pp: osuPerformance,
             map: {
