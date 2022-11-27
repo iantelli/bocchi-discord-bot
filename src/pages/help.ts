@@ -108,7 +108,7 @@ export function getCategoryPage(interactionId: string): InteractionReplyOptions 
         .setCustomId(nextId)
         .setLabel("Next")
         .setStyle(ButtonStyle.Success)
-        .setDisabled(offset >= 0)
+        .setDisabled(offset >= category.commands.length - 1)
 
     const component = new ActionRowBuilder<ButtonBuilder>().addComponents(backButton, rootButton, nextButton)
 
