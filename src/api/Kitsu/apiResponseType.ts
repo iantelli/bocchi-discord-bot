@@ -1,4 +1,4 @@
-export interface BeatmapResponseApi {
+export type BeatmapResponseApi = {
     ParentSetID: number
     BeatmapID: number
     TotalLength: number
@@ -17,7 +17,7 @@ export interface BeatmapResponseApi {
     DifficultyRating: number
 }
 
-export interface BeatmapSetResponseApi {
+export type BeatmapSetResponseApi = {
     SetID: number
     Title: string
     Artist: string
