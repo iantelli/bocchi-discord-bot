@@ -12,25 +12,25 @@ const body = commands.map(({ commands }) => commands.map(({ meta }) => meta)).fl
 const rest = new REST({ version: "10" }).setToken(keys.clientToken)
 
 async function main() {
-    const currentUser = (await rest.get(Routes.user())) as APIUser
+  const currentUser = (await rest.get(Routes.user())) as APIUser
 
-    const endpoint =
-        process.env.NODE_ENV === "production"
-            ? Routes.applicationCommands(currentUser.id)
-            : Routes.applicationGuildCommands(currentUser.id, keys.testGuild)
+  const endpoint =
+    process.env.NODE_ENV === "production"
+      ? Routes.applicationCommands(currentUser.id)
+      : Routes.applicationGuildCommands(currentUser.id, keys.testGuild)
 
-    await rest.put(endpoint, { body })
-    return currentUser
+  await rest.put(endpoint, { body })
+  return currentUser
 }
 
 main()
-    .then((user) => {
-        const tag = `${user.username}#${user.discriminator}`
-        const response =
-            process.env.NODE_ENV === "production"
-                ? `Successfully registered application commands for ${tag}!`
-                : `Successfully registered application commands for development in ${keys.testGuild} as ${tag}!`
+  .then((user) => {
+    const tag = `${user.username}#${user.discriminator}`
+    const response =
+      process.env.NODE_ENV === "production"
+        ? `Successfully registered application commands for ${tag}!`
+        : `Successfully registered application commands for development in ${keys.testGuild} as ${tag}!`
 
-        console.log(response)
-    })
-    .catch(console.error)
+    console.log(response)
+  })
+  .catch(console.error)
